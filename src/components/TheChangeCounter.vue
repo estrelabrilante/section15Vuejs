@@ -15,7 +15,7 @@
 import { mapActions } from 'vuex';
 export default {
   methods: {
-    ...mapActions(['incrementAction', 'increaseAction']),
+    ...mapActions('numbers', ['incrementAction', 'increaseAction']),
 
     // addOne() {
     // this.$store.state.counter++;

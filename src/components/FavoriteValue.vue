@@ -9,7 +9,8 @@ export default {
       //   return this.$store.state.counter;
       //   multiply by 2
       //   return this.$store.getters.finalCounter;
-      return this.$store.getters.normalizedCounter;
+      // return this.$store.getters.normalizedCounter;
+      return this.$store.getters['numbers/normalizedCounter'];
     },
   },
 };

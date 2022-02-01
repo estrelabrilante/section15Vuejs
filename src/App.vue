@@ -32,7 +32,7 @@ export default {
       // Mutations
       // this.$store.commit('increment');
       // Actions dispatch
-      this.$store.dispatch('incrementAction');
+      this.$store.dispatch('numbers/incrementAction');
     },
   },
   computed: {
