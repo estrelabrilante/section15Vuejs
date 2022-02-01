@@ -6,8 +6,12 @@ export default {
   methods: {
     addOne() {
       // this.$store.state.counter++;
-      // mutation name
-      this.$store.commit('increment');
+      // mutation name: increase
+      // this.$store.commit('increase', { value: 10 });
+      this.$store.commit({
+        type: 'increase',
+        value: 10,
+      });
     },
   },
 };
