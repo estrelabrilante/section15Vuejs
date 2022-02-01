@@ -24,7 +24,10 @@ export default {
   methods: {
     addOne() {
       // this.$store.state.counter++;
-      this.$store.commit('increment');
+      // Mutations
+      // this.$store.commit('increment');
+      // Actions dispatch
+      this.$store.dispatch('incrementAction');
     },
   },
 };

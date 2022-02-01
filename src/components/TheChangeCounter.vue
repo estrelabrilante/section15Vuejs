@@ -1,19 +1,39 @@
 <template>
-  <button @click="addOne">Add 10 Mul 2</button>
+  <!-- <button @click="addOne">Add 10 Mul 2</button> -->
+  <button @click="incrementAction">Add 1</button>
+  <button
+    @click="
+      increaseAction({
+        value: 11,
+      })
+    "
+  >
+    Add 11
+  </button>
 </template>
 <script>
+import { mapActions } from 'vuex';
 export default {
   methods: {
-    addOne() {
-      // this.$store.state.counter++;
+    ...mapActions(['incrementAction', 'increaseAction']),
 
-      // mutation name: increase
-      // this.$store.commit('increase', { value: 10 });
-      this.$store.commit({
-        type: 'increase',
-        value: 10,
-      });
-    },
+    // addOne() {
+    // this.$store.state.counter++;
+
+    // mutation name: increase
+    // this.$store.commit('increase', { value: 10 });
+    // this.$store.commit({
+    //   type: 'increase',
+    //   value: 10,
+    // });
+
+    // Actions name: increaseAction
+    // this.$store.dispatch({
+    //   type: 'increaseAction',
+    //   value: 10,
+    // });
+
+    // },
   },
 };
 </script>
