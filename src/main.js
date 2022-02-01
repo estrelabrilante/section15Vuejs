@@ -2,8 +2,7 @@ import { createApp } from 'vue';
 import { createStore } from 'vuex';
 
 import App from './App.vue';
-
-const store = createStore({
+const counterModule = {
   state() {
     return {
       counter: 0,
@@ -18,7 +17,6 @@ const store = createStore({
     },
   },
   actions: {
-    // actions can use same name as mutations
     incrementAction(context) {
       context.commit('increment');
       // setTimeout(function () {
@@ -43,6 +41,37 @@ const store = createStore({
         return 100;
       }
       return finalValue;
+    },
+  },
+};
+
+const store = createStore({
+  modules: {
+    numbers: counterModule,
+  },
+  state() {
+    return {
+      isLoggedIn: false,
+    };
+  },
+  mutations: {
+    setAuth(state, payload) {
+      state.isLoggedIn = state.isLoggedIn + payload.isAuth;
+    },
+  },
+  actions: {
+    // actions can use same name as mutations
+
+    logInAction(context) {
+      context.commit('setAuth', { isAuth: true });
+    },
+    logOutAction(context) {
+      context.commit('setAuth', { isAuth: false });
+    },
+  },
+  getters: {
+    userIsAuthenticated(state) {
+      return state.isLoggedIn;
     },
   },
 });
