@@ -15,6 +15,7 @@
 import { mapActions } from 'vuex';
 export default {
   methods: {
+    // namespacing
     ...mapActions('numbers', ['incrementAction', 'increaseAction']),
 
     // addOne() {
